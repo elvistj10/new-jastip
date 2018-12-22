@@ -1,0 +1,27 @@
+========> Cara Deploy ke Kubernetes Engine Gcloud <=========
+
+- Hapus folder "target" di microservice yang akan di deploy(jika ada perubahan pada setting yml, atau perubahan source code java).
+- running command "mvn compile liquibase:diff" pada folder microservice, misal 'cd c:/users/dell-pc/root folder/nama folder microservice' (jika ada perubahan pada file   entity xml liquibase, LEWATKAN JIKA TIDAK ADA PERUBAHAN).
+
+- Jalankan windows PowerShell as Administrator running command 'gcloud auth login', browser akan mengarahkan agar login terlebih dahulu ke akun Gcloud.
+- Setelah berhasil login, running command 'gcloud config set project PROJECT-ID', misal "gcloud config set project principal-iris-225923"
+- Setelah berhasil set project, running command "gcloud container clusters get-credentials jastip-cluster-1" untuk memilih cluster kubernetes.
+
+- Jalankan windows PowerShell as Administrator (arahkan direktori ke dalam folder Microservice, misal 'cd c:/users/dell-pc/root folder/nama folder microservice').
+- running command 'mvn clean package -Pprod -DskipTests dockerfile:build' (docker status harus dalam kondisi running).
+- Masih dalam windows PowerShell, masuk ke direktori kubernetes yang ada di dalam root folder bersamaan dengan folder microservice lain, misal 'cd c:/users/dell-    pc/root folder/kubernetes
+- Jalankan command 'jhipster kubernetes' pilih 'Microservice Application', enter.
+- Enter the root directory where your gateway(s) and microservices are located (../) (TEKAN ENTER jika folder microservice berada dalam root folder yang sama).
+- Pilih nama microservice yang akan di deploy, cara pilihnya adalah dengan menggunakan tombol spasi pada nama microservice target (jika ingin memilih semua caranya       dengan menekan tombol huruf 'a' pada keyboard) kemudian tekan enter.
+
+- ? Enter the admin password used to secure the JHipster Registry (admin), tekan enter.
+- ? What should we use for the Kubernetes namespace? (default), tekan enter.
+- ? What should we use for the base Docker repository name? (isi dengan username dockerhub, misal 'killingbond').
+- ? What command should we use for push Docker image to repository? (docker push) tekan enter.
+- ? Do you want to use JHipster Console for log aggregation (ELK)? (Y/n) (pilih n dan tekan enter).
+- ? Do you want to export your services for Prometheus (needs a running prometheus operator)? (Y/n) (pilih n dan tekan enter)
+- > LoadBalancer - Let a kubernetes cloud provider automatically assign an IP (yang saya gunakan adalah ini), tekan enter.
+
+- Buat tag untuk Push ke dockerhub dengan cara 'docker image tag nama-microservice killingbond/nama-microservice', enter.
+- Push ke dockerhub dengan cara 'docker push killingbond/nama-microservice', enter.
+- Setelah selesai Push ke dockerhub, running command 'kubectl apply -f nama-microservice' untuk DEPLOY ke Kubernetes Engine Gcloud
