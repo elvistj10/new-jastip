@@ -1,0 +1,175 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="DELL (generated)" id="1544699636833-1">
+        <createTable tableName="jhi_persistent_audit_event">
+            <column name="dtype" type="VARCHAR(31)">
+                <constraints nullable="false"/>
+            </column>
+            <column autoIncrement="true" name="event_id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+            </column>
+            <column name="event_date" type="BINARY(255)"/>
+            <column name="event_type" type="VARCHAR(255)"/>
+            <column name="principal" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="entity_id" type="BIGINT"/>
+            <column name="entity_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544699636833-2">
+        <createTable tableName="jhi_persistent_audit_evt_data">
+            <column name="event_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544699636833-3">
+        <createTable tableName="payment">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="paymentPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="nominal" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="offering_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="payment_date_time" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="payment_method" type="VARCHAR(255)"/>
+            <column name="payment_status" type="VARCHAR(255)"/>
+            <column name="posting_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544699636833-4">
+        <createTable tableName="payment_audit_config">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="payment_audit_configPK"/>
+            </column>
+            <column name="active_status" type="BOOLEAN"/>
+            <column name="entity_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544699636833-5">
+        <createTable tableName="payment_transfer_check_list">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="payment_transfer_check_listPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="expired_date_time" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nominal" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="offering_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="payment_confirm_date_time" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="posting_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544699636833-6">
+        <createTable tableName="payment_transfer_history">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="payment_transfer_historyPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="check_date_time" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expired_date_time" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nominal" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="offering_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="payment_confirm_date_time" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="posting_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544699636833-7">
+        <createTable tableName="payment_transfer_unmatched">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="payment_transfer_unmatchedPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="check_date_time" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expired_date_time" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nominal" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="offering_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="payment_unmatched_date_time" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="posting_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544699636833-8">
+        <addPrimaryKey columnNames="event_id, name" tableName="jhi_persistent_audit_evt_data"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544699636833-9">
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="jhi_persistent_audit_evt_data" constraintName="FK2ehnyx2si4tjd2nt4q7y40v8m" deferrable="false" initiallyDeferred="false" referencedColumnNames="event_id" referencedTableName="jhi_persistent_audit_event"/>
+    </changeSet>
+</databaseChangeLog>

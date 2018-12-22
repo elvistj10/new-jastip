@@ -1,0 +1,464 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="DELL (generated)" id="1544771968410-1">
+        <createTable tableName="comment">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="commentPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="jhi_comment" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="comment_date_time" type="BINARY(255)"/>
+            <column name="profile_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="posting_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-2">
+        <createTable tableName="jhi_persistent_audit_event">
+            <column name="dtype" type="VARCHAR(31)">
+                <constraints nullable="false"/>
+            </column>
+            <column autoIncrement="true" name="event_id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+            </column>
+            <column name="event_date" type="BINARY(255)"/>
+            <column name="event_type" type="VARCHAR(255)"/>
+            <column name="principal" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="entity_id" type="BIGINT"/>
+            <column name="entity_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-3">
+        <createTable tableName="jhi_persistent_audit_evt_data">
+            <column name="event_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-4">
+        <createTable tableName="offering">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="offeringPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="actor_city_from_name" type="VARCHAR(255)"/>
+            <column name="actor_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="actor_type" type="VARCHAR(255)"/>
+            <column name="delivery_date" type="BINARY(255)"/>
+            <column name="jastip_fee" type="DOUBLE"/>
+            <column name="notes" type="VARCHAR(255)"/>
+            <column name="offering_date" type="BINARY(255)"/>
+            <column name="offering_expired_date" type="BINARY(255)"/>
+            <column name="price_item" type="DOUBLE"/>
+            <column name="quantity" type="INT"/>
+            <column name="return_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sent_date" type="BINARY(255)"/>
+            <column name="sent_from_city_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sent_from_city_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sent_from_country_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sent_from_country_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="service_fee" type="DOUBLE"/>
+            <column name="shopping_date" type="BINARY(255)"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="timezone" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_fee" type="DOUBLE"/>
+            <column name="trip_city_name" type="VARCHAR(255)"/>
+            <column name="trip_country_name" type="VARCHAR(255)"/>
+            <column name="trip_end_date" type="BINARY(255)"/>
+            <column name="trip_id" type="BIGINT"/>
+            <column name="trip_start_date" type="BINARY(255)"/>
+            <column name="posting_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-5">
+        <createTable tableName="offering_courier">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="offering_courierPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="confirm_received_date_time" type="BINARY(255)"/>
+            <column name="courier_delivery_day" type="INT"/>
+            <column name="courier_est_delivered_date" type="BINARY(255)"/>
+            <column name="courier_receipt_img" type="BLOB"/>
+            <column name="courier_receipt_img_content_type" type="VARCHAR(255)"/>
+            <column name="courier_receipt_img_thumb_url" type="VARCHAR(255)"/>
+            <column name="courier_receipt_img_url" type="VARCHAR(255)"/>
+            <column name="courier_receipt_no" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="courier_send_date" type="BINARY(255)"/>
+            <column name="offering_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-6">
+        <createTable tableName="offering_delivery_info">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="offering_delivery_infoPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="delivery_address" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone_number" type="VARCHAR(255)"/>
+            <column name="recipient_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="offering_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-7">
+        <createTable tableName="offering_delivery_service">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="offering_delivery_servicePK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="delivery_fee" type="DOUBLE"/>
+            <column name="delivery_service_id" type="BIGINT"/>
+            <column name="delivery_service_name" type="VARCHAR(255)"/>
+            <column name="package_size_id" type="BIGINT"/>
+            <column name="package_size_name" type="VARCHAR(255)"/>
+            <column name="sent_to_city_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sent_to_city_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sent_to_country_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sent_to_country_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="offering_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-8">
+        <createTable tableName="offering_payment">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="offering_paymentPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="final_jastip_fee" type="DOUBLE"/>
+            <column name="final_price_item" type="DOUBLE"/>
+            <column name="final_service_fee" type="DOUBLE"/>
+            <column name="final_total_fee" type="INT"/>
+            <column name="payment_confirm_date_time" type="BINARY(255)"/>
+            <column name="payment_method" type="VARCHAR(255)"/>
+            <column name="unique_identifier" type="DOUBLE"/>
+            <column name="offering_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-9">
+        <createTable tableName="offering_puchase">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="offering_puchasePK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="purchased" type="BOOLEAN"/>
+            <column name="receipt_img" type="BLOB"/>
+            <column name="receipt_img_content_type" type="VARCHAR(255)"/>
+            <column name="receipt_img_thumb_url" type="VARCHAR(255)"/>
+            <column name="receipt_img_url" type="VARCHAR(255)"/>
+            <column name="offering_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-10">
+        <createTable tableName="posting">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="postingPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="accepted_offering_id" type="BIGINT"/>
+            <column name="additional_info" type="VARCHAR(255)"/>
+            <column name="avaiable_quantity" type="INT"/>
+            <column name="brand" type="VARCHAR(255)"/>
+            <column name="city_buy_from_id" type="BIGINT"/>
+            <column name="city_buy_from_name" type="VARCHAR(255)"/>
+            <column name="city_sent_to_id" type="BIGINT"/>
+            <column name="city_sent_to_name" type="VARCHAR(255)"/>
+            <column name="country_buy_from_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country_buy_from_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country_sent_to_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country_sent_to_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delivery_date" type="BINARY(255)"/>
+            <column name="description" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expired_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fragile" type="BOOLEAN"/>
+            <column name="item_category_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="item_category_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="item_sub_category_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="item_sub_category_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="item_weight" type="INT"/>
+            <column name="jastip_fee" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="need_cooler" type="BOOLEAN"/>
+            <column name="need_receipt" type="BOOLEAN"/>
+            <column name="other_note" type="BOOLEAN"/>
+            <column name="other_note_info" type="VARCHAR(255)"/>
+            <column name="owner_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="package_size_id" type="BIGINT"/>
+            <column name="package_size_name" type="VARCHAR(255)"/>
+            <column name="posting_date" type="BINARY(255)"/>
+            <column name="posting_item_img" type="BLOB"/>
+            <column name="posting_item_img_content_type" type="VARCHAR(255)"/>
+            <column name="posting_item_img_thumb_url" type="VARCHAR(255)"/>
+            <column name="posting_item_img_url" type="VARCHAR(255)"/>
+            <column name="price_item" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="quantity" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reference_link" type="VARCHAR(255)"/>
+            <column name="reference_place" type="VARCHAR(255)"/>
+            <column name="service_fee" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="shopping_date" type="BINARY(255)"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="timezone" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_fee" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="jhi_type" type="VARCHAR(255)"/>
+            <column name="trip_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-11">
+        <createTable tableName="sub_comment">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="sub_commentPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="profile_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sub_comment" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sub_comment_date_time" type="BINARY(255)"/>
+            <column name="comment_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-12">
+        <createTable tableName="transaction_audit_config">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="transaction_audit_configPK"/>
+            </column>
+            <column name="active_status" type="BOOLEAN"/>
+            <column name="entity_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-13">
+        <createTable tableName="trip">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="tripPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="dest_city_id" type="BIGINT"/>
+            <column name="dest_city_name" type="VARCHAR(255)"/>
+            <column name="dest_country_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dest_country_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="end_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="origin_city_id" type="BIGINT"/>
+            <column name="origin_city_name" type="VARCHAR(255)"/>
+            <column name="origin_country_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="origin_country_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="owner_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="post_count" type="INT"/>
+            <column name="posting_date" type="BINARY(255)"/>
+            <column name="start_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="timezone" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-14">
+        <addPrimaryKey columnNames="event_id, name" tableName="jhi_persistent_audit_evt_data"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-15">
+        <addUniqueConstraint columnNames="offering_id" constraintName="UC_OFFERING_COURIEROFFERING_ID_COL" tableName="offering_courier"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-16">
+        <addUniqueConstraint columnNames="offering_id" constraintName="UC_OFFERING_DELIVERY_INFOOFFERING_ID_COL" tableName="offering_delivery_info"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-17">
+        <addUniqueConstraint columnNames="offering_id" constraintName="UC_OFFERING_DELIVERY_SERVICEOFFERING_ID_COL" tableName="offering_delivery_service"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-18">
+        <addUniqueConstraint columnNames="offering_id" constraintName="UC_OFFERING_PAYMENTOFFERING_ID_COL" tableName="offering_payment"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-19">
+        <addUniqueConstraint columnNames="offering_id" constraintName="UC_OFFERING_PUCHASEOFFERING_ID_COL" tableName="offering_puchase"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-20">
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="jhi_persistent_audit_evt_data" constraintName="FK2ehnyx2si4tjd2nt4q7y40v8m" deferrable="false" initiallyDeferred="false" referencedColumnNames="event_id" referencedTableName="jhi_persistent_audit_event"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-21">
+        <addForeignKeyConstraint baseColumnNames="posting_id" baseTableName="comment" constraintName="FK4uvy94ui17hs3qcch04plyltp" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="posting"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-22">
+        <addForeignKeyConstraint baseColumnNames="trip_id" baseTableName="posting" constraintName="FK5cpenwkf9tlxkwnu6yrxmst6u" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="trip"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-23">
+        <addForeignKeyConstraint baseColumnNames="offering_id" baseTableName="offering_payment" constraintName="FK6vep2w6qofjuqhig3brvwvfbh" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="offering"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-24">
+        <addForeignKeyConstraint baseColumnNames="offering_id" baseTableName="offering_delivery_info" constraintName="FKgbohjge1rfmm3v1ch81vk1c9c" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="offering"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-25">
+        <addForeignKeyConstraint baseColumnNames="posting_id" baseTableName="offering" constraintName="FKi8ei64ahk553jie9p3xu6x9vl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="posting"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-26">
+        <addForeignKeyConstraint baseColumnNames="offering_id" baseTableName="offering_delivery_service" constraintName="FKj5y3d40eiwe5vftu1hnrkr5gv" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="offering"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-27">
+        <addForeignKeyConstraint baseColumnNames="offering_id" baseTableName="offering_puchase" constraintName="FKlxh39hobcchbnoxrrgix56we" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="offering"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-28">
+        <addForeignKeyConstraint baseColumnNames="offering_id" baseTableName="offering_courier" constraintName="FKmjdeltdeclh6rexryue7c0w1" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="offering"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544771968410-29">
+        <addForeignKeyConstraint baseColumnNames="comment_id" baseTableName="sub_comment" constraintName="FKpyep9wrxv2s4lxgr14h715983" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="comment"/>
+    </changeSet>
+</databaseChangeLog>

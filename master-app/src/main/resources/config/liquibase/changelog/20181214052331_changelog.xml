@@ -1,0 +1,304 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="DELL (generated)" id="1544765068405-1">
+        <createTable tableName="bank">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="bankPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="active_status" type="BOOLEAN"/>
+            <column name="bank_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-2">
+        <createTable tableName="business_account">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="business_accountPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="account_number" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bank_name" type="VARCHAR(255)"/>
+            <column name="coorperate_id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-3">
+        <createTable tableName="city">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="cityPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="city_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="province_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-4">
+        <createTable tableName="country">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="countryPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="country_code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="image" type="BLOB"/>
+            <column name="image_content_type" type="VARCHAR(255)"/>
+            <column name="image_flag" type="BLOB"/>
+            <column name="image_flag_content_type" type="VARCHAR(255)"/>
+            <column name="image_flag_thumb_url" type="VARCHAR(255)"/>
+            <column name="image_flag_url" type="VARCHAR(255)"/>
+            <column name="image_thumb_url" type="VARCHAR(255)"/>
+            <column name="image_url" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-5">
+        <createTable tableName="item_category">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="item_categoryPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="item_category_icon" type="BLOB"/>
+            <column name="item_category_icon_content_type" type="VARCHAR(255)"/>
+            <column name="item_category_icon_url" type="VARCHAR(255)"/>
+            <column name="item_category_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-6">
+        <createTable tableName="item_sub_category">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="item_sub_categoryPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="item_sub_category_icon" type="BLOB"/>
+            <column name="item_sub_category_icon_content_type" type="VARCHAR(255)"/>
+            <column name="item_sub_category_icon_url" type="VARCHAR(255)"/>
+            <column name="item_sub_category_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="item_category_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-7">
+        <createTable tableName="jhi_persistent_audit_event">
+            <column name="dtype" type="VARCHAR(31)">
+                <constraints nullable="false"/>
+            </column>
+            <column autoIncrement="true" name="event_id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+            </column>
+            <column name="event_date" type="BINARY(255)"/>
+            <column name="event_type" type="VARCHAR(255)"/>
+            <column name="principal" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="entity_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="entity_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-8">
+        <createTable tableName="jhi_persistent_audit_evt_data">
+            <column name="event_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-9">
+        <createTable tableName="master_audit_config">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="master_audit_configPK"/>
+            </column>
+            <column name="active_status" type="BOOLEAN"/>
+            <column name="entity_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-10">
+        <createTable tableName="package_size">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="package_sizePK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="package_size_desciption" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="package_size_icon" type="BLOB"/>
+            <column name="package_size_icon_content_type" type="VARCHAR(255)"/>
+            <column name="package_size_icon_url" type="VARCHAR(255)"/>
+            <column name="package_size_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-11">
+        <createTable tableName="postal_code">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="postal_codePK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="postal_code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="city_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-12">
+        <createTable tableName="province">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="provincePK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="province_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-13">
+        <createTable tableName="service_fee">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="service_feePK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="active_status" type="BOOLEAN"/>
+            <column name="end_date_time" type="BINARY(255)"/>
+            <column name="fix_nominal_fee" type="DOUBLE"/>
+            <column name="maximum_nominal_price" type="DOUBLE"/>
+            <column name="minimum_nominal_fee" type="DOUBLE"/>
+            <column name="minimum_nominal_price" type="DOUBLE"/>
+            <column name="percentage_fee" type="DOUBLE"/>
+            <column name="start_date_time" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-14">
+        <createTable tableName="updates">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="updatesPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="entity_id" type="BIGINT"/>
+            <column name="entity_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="update_date_time" type="BINARY(255)"/>
+            <column name="update_type" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-15">
+        <addPrimaryKey columnNames="event_id, name" tableName="jhi_persistent_audit_evt_data"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-16">
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="jhi_persistent_audit_evt_data" constraintName="FK2ehnyx2si4tjd2nt4q7y40v8m" deferrable="false" initiallyDeferred="false" referencedColumnNames="event_id" referencedTableName="jhi_persistent_audit_event"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-17">
+        <addForeignKeyConstraint baseColumnNames="country_id" baseTableName="province" constraintName="FKipakwfceswwc0lb3esew9hqqv" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="country"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-18">
+        <addForeignKeyConstraint baseColumnNames="province_id" baseTableName="city" constraintName="FKll21eddgtrjc9f40ueeouyr8f" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="province"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-19">
+        <addForeignKeyConstraint baseColumnNames="city_id" baseTableName="postal_code" constraintName="FKqays6kdd9a0wrehu8wwom4dtq" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="city"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544765068405-20">
+        <addForeignKeyConstraint baseColumnNames="item_category_id" baseTableName="item_sub_category" constraintName="FKr1fsg86gqxeygq256fnk2i0qo" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="item_category"/>
+    </changeSet>
+</databaseChangeLog>

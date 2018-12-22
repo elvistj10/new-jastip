@@ -1,0 +1,370 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="DELL (generated)" id="1544680501791-1">
+        <createTable tableName="address">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="addressPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="address" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="city_id" type="BIGINT"/>
+            <column name="city_name" type="VARCHAR(255)"/>
+            <column name="country_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="default_address" type="BOOLEAN"/>
+            <column name="mobile_phone_number" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone_number" type="VARCHAR(255)"/>
+            <column name="postal_code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="provice_id" type="BIGINT"/>
+            <column name="province_name" type="VARCHAR(255)"/>
+            <column name="profile_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-2">
+        <createTable tableName="bank_account">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="bank_accountPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="account_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="account_number" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bank_id" type="BIGINT"/>
+            <column name="bank_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="branch_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="default_bank_account" type="BOOLEAN"/>
+            <column name="profile_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-3">
+        <createTable tableName="block_list">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="block_listPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="jhi_block" type="BOOLEAN"/>
+            <column name="block_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="blocked_profile_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="profile_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-4">
+        <createTable tableName="blocked_by_list">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="blocked_by_listPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="block_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="blocked" type="BOOLEAN"/>
+            <column name="bloker_profile_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="profile_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-5">
+        <createTable tableName="credit_card">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="credit_cardPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="cc_number" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cvc" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="default_credit_card" type="BOOLEAN"/>
+            <column name="expire_mon" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expire_year" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="profile_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-6">
+        <createTable tableName="feedback">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="feedbackPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="feedback_date_time" type="BINARY(255)"/>
+            <column name="feedbacker_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="message" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="offering_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="posting_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rating" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="profile_id" type="BIGINT"/>
+            <column name="response_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-7">
+        <createTable tableName="feedback_response">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="feedback_responsePK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="message" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="response_date_time" type="BINARY(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-8">
+        <createTable tableName="follower_list">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="follower_listPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="followed_date" type="BINARY(255)"/>
+            <column name="follower_profile_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="BOOLEAN"/>
+            <column name="profile_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-9">
+        <createTable tableName="following_list">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="following_listPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="following_date" type="BINARY(255)"/>
+            <column name="following_profile_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="BOOLEAN"/>
+            <column name="profile_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-10">
+        <createTable tableName="jhi_persistent_audit_event">
+            <column name="dtype" type="VARCHAR(31)">
+                <constraints nullable="false"/>
+            </column>
+            <column autoIncrement="true" name="event_id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+            </column>
+            <column name="event_date" type="BINARY(255)"/>
+            <column name="event_type" type="VARCHAR(255)"/>
+            <column name="principal" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="entity_id" type="BIGINT"/>
+            <column name="entity_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-11">
+        <createTable tableName="jhi_persistent_audit_evt_data">
+            <column name="event_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-12">
+        <createTable tableName="profile">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="profilePK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BINARY(255)"/>
+            <column name="active_date" type="BINARY(255)"/>
+            <column name="average_rating" type="DOUBLE"/>
+            <column name="city_id" type="BIGINT"/>
+            <column name="city_name" type="VARCHAR(255)"/>
+            <column name="country_id" type="BIGINT"/>
+            <column name="country_name" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="facebook_account" type="VARCHAR(255)"/>
+            <column name="five_star_count" type="INT"/>
+            <column name="follower_count" type="INT"/>
+            <column name="following_count" type="INT"/>
+            <column name="four_star_count" type="INT"/>
+            <column name="google_account" type="VARCHAR(255)"/>
+            <column name="image" type="BLOB"/>
+            <column name="image_content_type" type="VARCHAR(255)"/>
+            <column name="like_items_count" type="INT"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="offers_count" type="INT"/>
+            <column name="one_star_count" type="INT"/>
+            <column name="phone_number" type="VARCHAR(255)"/>
+            <column name="pre_order_count" type="INT"/>
+            <column name="request_count" type="INT"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="three_star_count" type="INT"/>
+            <column name="trip_count" type="INT"/>
+            <column name="two_star_count" type="INT"/>
+            <column name="url_image" type="VARCHAR(255)"/>
+            <column name="url_image_thumb" type="VARCHAR(255)"/>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="username" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-13">
+        <createTable tableName="profiles_audit_config">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="profiles_audit_configPK"/>
+            </column>
+            <column name="active_status" type="BOOLEAN"/>
+            <column name="entity_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-14">
+        <addPrimaryKey columnNames="event_id, name" tableName="jhi_persistent_audit_evt_data"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-15">
+        <addUniqueConstraint columnNames="response_id" constraintName="UC_FEEDBACKRESPONSE_ID_COL" tableName="feedback"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-16">
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="jhi_persistent_audit_evt_data" constraintName="FK2ehnyx2si4tjd2nt4q7y40v8m" deferrable="false" initiallyDeferred="false" referencedColumnNames="event_id" referencedTableName="jhi_persistent_audit_event"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-17">
+        <addForeignKeyConstraint baseColumnNames="profile_id" baseTableName="credit_card" constraintName="FK2ovmhf694sksd4bvwxx0x51se" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="profile"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-18">
+        <addForeignKeyConstraint baseColumnNames="profile_id" baseTableName="feedback" constraintName="FK545ruox7xt3q20yunedcasfqj" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="profile"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-19">
+        <addForeignKeyConstraint baseColumnNames="profile_id" baseTableName="follower_list" constraintName="FK5tyaj9elh65qhbnsd2v3tohfp" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="profile"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-20">
+        <addForeignKeyConstraint baseColumnNames="profile_id" baseTableName="block_list" constraintName="FK7umdsemuvqcssdcbubhcywlqr" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="profile"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-21">
+        <addForeignKeyConstraint baseColumnNames="profile_id" baseTableName="address" constraintName="FK9cm2xydhhkvra3wpnh90yb3y0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="profile"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-22">
+        <addForeignKeyConstraint baseColumnNames="response_id" baseTableName="feedback" constraintName="FKexaov9xd3np7haxaak2pk3s4w" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="feedback_response"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-23">
+        <addForeignKeyConstraint baseColumnNames="profile_id" baseTableName="following_list" constraintName="FKhaanrh3wb45qjgl5wyfc3euio" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="profile"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-24">
+        <addForeignKeyConstraint baseColumnNames="profile_id" baseTableName="bank_account" constraintName="FKjccb7c0c02yrl7g215t2k5s2f" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="profile"/>
+    </changeSet>
+    <changeSet author="DELL (generated)" id="1544680501791-25">
+        <addForeignKeyConstraint baseColumnNames="profile_id" baseTableName="blocked_by_list" constraintName="FKtc1rsyksxch9kkmyyonscjpjd" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="profile"/>
+    </changeSet>
+</databaseChangeLog>
